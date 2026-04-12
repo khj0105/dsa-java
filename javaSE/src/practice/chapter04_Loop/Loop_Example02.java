@@ -1,0 +1,57 @@
+package practice.chapter04_Loop;
+
+import java.util.Scanner;
+
+public class Loop_Example02 {
+	public static void main(String[] args) {
+/*
+		정수 5개를 입력받아 그 합을 출력하시오.
+		출력 결과 :
+			정수 입력: 1
+			정수 입력: 2
+			정수 입력: 3
+			정수 입력: 4
+			정수 입력: 5
+			15
+ */
+		Scanner scan = new Scanner(System.in);
+		/*System.out.println("정수 입력: ");
+		int num1 = scan.nextInt();
+		System.out.println("정수 입력: ");
+		int num2 = scan.nextInt();
+		System.out.println("정수 입력: ");
+		int num3 = scan.nextInt();
+		System.out.println("정수 입력: ");
+		int num4 = scan.nextInt();
+		System.out.println("정수 입력: ");
+		int num5 = scan.nextInt();
+		
+		int sum = 0;
+		
+		for(int i = 1; i <= 5; i++) {
+			sum = sum + numi;
+		}
+		
+		while(sum >= 0){
+			sum = sum+
+		}*/
+		int sum = 0;
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.print("정수 입력: ");
+			int num = scan.nextInt();
+			sum = sum + num;
+		}
+		System.out.println(sum);
+		
+		sum = 0;
+		int cnt = 0;
+		while (cnt < 5) {
+			System.out.print("정수 입력: ");
+			int num = scan.nextInt();
+			sum += num;
+			cnt++;
+		}
+		System.out.println(sum);
+	}
+}
