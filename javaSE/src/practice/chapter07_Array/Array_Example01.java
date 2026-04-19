@@ -1,0 +1,83 @@
+package practice.chapter07_Array;
+
+import java.util.Scanner;
+
+public class Array_Example01 {
+	public static void main(String[] args) {
+/*
+		문제
+		학생 5명의 시험 점수를 입력받아 배열에 저장하고
+		다음 정보를 출력하는 프로그램을 작성하시오.
+		
+		1. 모든 점수 출력
+		2. 총점
+		3. 평균
+		4. 최고 점수
+		5. 최저 점수
+		
+		출력 결과
+			학생1 점수 입력 : 30
+			학생2 점수 입력 : 50
+			학생3 점수 입력 : 40
+			학생4 점수 입력 : 20
+			학생5 점수 입력 : 100
+			
+			입력한 점수
+			30 50 40 20 100
+			
+			총점 : 240
+			평균 : 48.0
+			최고 점수 : 100
+			최저 점수 : 20
+*/
+		Scanner scan = new Scanner(System.in);
+		System.out.print("학생1 점수 입력 : ");
+		int a = scan.nextInt();
+		System.out.print("학생2 점수 입력 : ");
+		int b = scan.nextInt();
+		System.out.print("학생3 점수 입력 : ");
+		int c =scan.nextInt();
+		System.out.print("학생4 점수 입력 : ");
+		int d = scan.nextInt();
+		System.out.print("학생5 점수 입력 : ");
+		int e = scan.nextInt();
+		
+		int [] arr1;
+		arr1 = new int []{a, b, c, d, e};
+		
+		System.out.println("입력한 점수");
+		for(int i = 0; i < arr1.length; i++) {
+			System.out.print(arr1[i] + " ");
+		}
+		System.out.println();
+		
+		int sum = 0;
+		/*for (int i = 0; i < arr1.length; i++) {
+			System.out.println("총점 : " + sum += arr1[i]);
+		}*/
+		for (int i = 0; i < arr1.length; i++) {
+			sum += arr1[i];
+//			System.out.print("총점 : " + sum);
+		}
+		System.out.print("총점 : " + sum);
+		System.out.println();
+		
+		double avg = 0;
+		avg = (double) sum / arr1.length;
+		System.out.println("평균 : " + avg);
+		
+		// 최고점수
+		int max = 0;
+		for (int i = 0; i < arr1.length; i++) {
+			/*if (arr1[i] > arr1[i + 1]) {
+				max = arr1[i];
+				return;*/
+			max = arr1[i];
+			arr1 =
+			}
+			System.out.print("최고점수 : " + max);
+		}
+		// 최저점수
+		int min = 0;
+	}
+}
