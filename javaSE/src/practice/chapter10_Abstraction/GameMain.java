@@ -1,5 +1,7 @@
 package practice.chapter10_Abstraction;
 
+import java.util.Scanner;
+
 public class GameMain {
 	
 	public static void main(String[] args) {
@@ -34,8 +36,48 @@ public class GameMain {
 		 *
 		 * 8. 위 기능은 사용자가 종료를 선택할 때까지 반복 실행되도록 한다.
 		 */
-	
 		
+		Scanner scan = new Scanner(System.in);
+		GameMain_Method gm = new GameMain_Method();
+		Novice character = null;
+		int num = 0;
+		
+		while(true) {
+			gm.printMenu();
+			num = scan.nextInt();
+			
+			switch (num) {
+				case 1 -> {
+					// 캐릭터 생성 (createCharacter 메서드 이용)
+					character = gm.createCharacter();
+				}
+				case 2 -> {
+					// 캐릭터 정보 조회 (characterInfo 메서드 이용)
+					gm.characterInfo(character);
+				}
+				case 3 -> {
+					// 전직하기 (numberInput, jobSelect 메서드 이용)
+					if (character == null) gm.printText(3);
+					else character = gm.jobSelect(gm.numberInput(), character);
+				}
+				case 4 -> {
+					// 기본공격 (attack 메서드 이용)
+					if (character == null) gm.printText(3);
+					else character.attack();
+				}
+				case 5 -> {
+					// 스킬사용 (skill 메서드 이용)
+					if (character instanceof Skill s) s.skill();
+					else gm.printText(4);
+				}
+				case 0 -> {
+					gm.printText(1);
+					scan.close();
+					return;
+				}
+				default -> gm.printText(2);
+			}
+		}
 	}
 	
 }
