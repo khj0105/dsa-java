@@ -1,5 +1,7 @@
 package practice.chapter02_Operator;
 
+import java.util.Scanner;
+
 public class Oper_Example01 {
 	public static void main(String[] args) {
 		/*
@@ -13,5 +15,17 @@ public class Oper_Example01 {
 			 [출력 예]
 			 거스름돈 : 8500
 		 */
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("받은 금액 : ");
+		int cash = sc.nextInt();
+		
+		System.out.print("상품가격 : ");
+		int price = sc.nextInt();
+		
+		// 거스름돈 계산
+		int change = cash - price;
+		
+		System.out.println("거스름돈 : " + change);
 	}
 }

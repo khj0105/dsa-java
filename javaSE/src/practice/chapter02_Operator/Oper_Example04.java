@@ -1,5 +1,7 @@
 package practice.chapter02_Operator;
 
+import java.util.Scanner;
+
 public class Oper_Example04 {
 	public static void main(String[] args) {
 		/*
@@ -15,5 +17,21 @@ public class Oper_Example04 {
 			math점수: 35
 			총합: 190 평균: 63.333333333333336
 		 */
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("kor점수: ");
+		int kor = scan.nextInt();
+		System.out.print("eng점수: ");
+		int eng = scan.nextInt();
+		System.out.print("math점수: ");
+		int math = scan.nextInt();
+		
+		// 총합
+		int sum = kor + eng + math;
+		
+		// 평균 (자동 형변환 발생)
+		double avg = sum / 3.0;
+		
+		System.out.println("총합: " + sum + " 평균: " + avg);
 	}
 }
