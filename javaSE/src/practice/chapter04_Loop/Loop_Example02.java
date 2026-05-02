@@ -37,7 +37,7 @@ public class Loop_Example02 {
 		}*/
 		int sum = 0;
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 1; i <= 5; i++) {
 			System.out.print("정수 입력: ");
 			int num = scan.nextInt();
 			sum = sum + num;
@@ -52,6 +52,16 @@ public class Loop_Example02 {
 			sum += num;
 			cnt++;
 		}
+		System.out.println(sum);
+		
+		sum = 0;
+		cnt = 0;
+		do {
+			System.out.print("정수 입력: ");
+			int num = scan.nextInt();
+			sum += num;
+			cnt++;
+		} while (cnt < 5);
 		System.out.println(sum);
 	}
 }
