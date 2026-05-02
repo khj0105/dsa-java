@@ -19,6 +19,40 @@ public class User {
 		this.address = address;
 	}
 	
+	/*
+	// 2. 정렬 기준 정의 (이름 기준 오름차순)
+    @Override
+    public int compareTo(User o) {
+        // String 클래스의 compareTo를 사용하여 이름 순서 비교
+        // 'this'는 나 자신, 'o'는 비교 대상입니다.
+        int result = this.name.compareTo(o.getName());
+        
+        // 만약 이름이 같다면 아이디 순으로 정렬 (2차 정렬)
+        if (result == 0) {
+            return this.id.compareTo(o.getId());
+        }
+        
+        return result;
+    }
+    
+    // 3. Set 사용을 위한 중복 체크 정의 (아이디 기준)
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // 주소가 같으면 동일 객체
+        if (o instanceof User other) {
+            return this.id.equals(other.id); // 아이디가 같으면 동일 유저
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        // 아이디를 기준으로 해시값 생성
+        return Objects.hash(id);
+    }
+	*/
+	
+	
 	// toString()
 	
 	@Override
