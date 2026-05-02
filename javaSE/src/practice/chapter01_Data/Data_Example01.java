@@ -20,7 +20,14 @@ public class Data_Example01 {
 				int age = 20;
 				double height = 175.5;
 				char gender = '남';
-				
-				
+		
+		String info = """
+				이름 : %s
+				나이 : %d
+				키 : %.1f
+				성별 : %c
+				""".formatted(name, age, height, gender);
+		
+		System.out.println(info);
 	}
 }
