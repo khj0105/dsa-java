@@ -1,5 +1,7 @@
 package practice.chapter05_Method;
 
+import java.util.Scanner;
+
 /*
 	기능 상세
 	1. 입금
@@ -38,7 +40,74 @@ package practice.chapter05_Method;
 		입금 완료								출금 완료
  */
 public class Method_Example {
-	public static void main(String[] args) {
+	static Scanner sc = new Scanner(System.in);
 	
+	public static void main(String[] args) {
+		
+		int balance = 0;
+		
+		ATM:
+		while (true) {
+			
+			System.out.println("""
+					===== ATM =====
+					1. 입금
+					2. 출금
+					3. 잔액조회
+					4. 종료
+					""");
+			
+			System.out.print("선택 : ");
+			int menu = sc.nextInt();
+			
+			switch (menu) {
+				case 1 -> balance = deposit(balance);
+				case 2 -> balance = withdraw(balance);
+				case 3 -> checkBalance(balance);
+				case 4 -> {
+					System.out.println("프로그램 종료");
+					break ATM;   // 프로그램 종료
+				}
+				default -> System.out.println("잘못된 메뉴입니다.");
+			}
+		}
+		
+		sc.close();
 	}
+	
+	// 입금 메서드
+	static int deposit(int balance) {
+		
+		System.out.print("입금 금액 : ");
+		int money = sc.nextInt();
+		
+		balance += money;
+		System.out.println("입금 완료");
+		
+		return balance;
+	}
+	
+	// 출금 메서드
+	static int withdraw(int balance) {
+		
+		System.out.print("출금 금액 : ");
+		int money = sc.nextInt();
+		
+		if (money > balance) {
+			System.out.println("잔액이 부족합니다.");
+		}
+		else {
+			balance -= money;
+			System.out.println("출금 완료");
+		}
+		
+		return balance;
+	}
+	
+	// 잔액 조회 메서드
+	static void checkBalance(int balance) {
+		System.out.println("현재 잔액 : " + balance);
+	}
+	
 }
+
