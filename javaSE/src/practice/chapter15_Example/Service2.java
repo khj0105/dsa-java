@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Service2 {
-	private ArrayList<Student> studentList;
+	private ArrayList<Student2> studentList;
 	private Scanner scan;
 	
 	
