@@ -63,9 +63,44 @@ public class Service2 {
 		System.out.println("\n[ 성적수정 ]");
 		System.out.print("학번 입력 > ");
 		int stdNum = scan.nextInt();
-		if (studentList.isEmpty()) {
-			System.out.println("학생정보가 없습니다.");
+		
+		// 1. 학번과 일치하는 학생 찾기
+		Student2 targetStudent = null;
+		for (Student2 s : studentList) {
+			if (s.getStdNum() == stdNum) {
+				targetStudent = s;
+				break;
+			}
 		}
+		
+		// 2. 학생 존재 여부 체크
+		if (targetStudent == null) {
+			System.out.println("학생정보가 없습니다.");
+			return; // 메서드 종료
+		}
+		
+		// 3. 점수 입력 및 유효성 검사 (반복)
+		int java, database, web;
+		while(true) {
+			System.out.println("*Java : ");
+			java = scan.nextInt();
+			System.out.println("*DB : ");
+			database = scan.nextInt();
+			System.out.println("*WEB : ");
+			web = scan.nextInt();
+			
+			// 0~100점 사이인지 확인
+			if ((java >= 0 && java <= 100) &&
+				(database >= 0 && database <= 100) &&
+				(web >= 0 && web <= 100)) {
+				break; // 올바른 입력이면 반복문 탈출
+			}
+			System.out.println("점수는 0~100점 이내로 입력하세요.");
+		}
+		
+		// 4. 성적 수정 반영 (기존에 만들어둔 gradeModify 활용)
+		targetStudent.gradeModify(java, database, web);
+		System.out.println("수정되었습니다.");
 	}
 	
 	public void selectStudent() {
