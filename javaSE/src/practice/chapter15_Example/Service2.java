@@ -107,17 +107,28 @@ public class Service2 {
 		System.out.println("\n[ 학생조회 ]");
 		scan.nextLine();
 		System.out.print("이름 입력 > ");
-		int name = scan.nextInt();
+		String searchName = scan.nextLine(); // 이름을 받아야 하므로 String
 		
+		// 1. 리스트가 비어있는지 먼저 확인
 		if (studentList.isEmpty()) {
-			System.out.println("백점 학생의 정보가 없습니다.");
+			System.out.println("등록된 학생의 정보가 없습니다.");
 			return;
 		}
 		
-		for (Student s : studentList) {
-			if (s.getName().equals(name)) {
+		// 2. 검색 결과가 있는지 확인하기 위한 변수
+		boolean isExist = false;
+		
+		// 3. 리스트를 돌면서 이름이 일치하는 모든 학생 출력 (동명이인 포함)
+		for (Student2 s : studentList) {
+			if (s.getName().equals(searchName)) {
 				System.out.println(s);
+				isExist = true; // 일치하는 학생을 한 명이라도 찾으면 true로 변경
 			}
+		}
+		
+		// 4. 반복문이 끝났는데도 한 명도 못 찾았다면 안내 메시지 출력
+		if (!isExist) {
+			System.out.println(searchName + " 학생의 정보가 없습니다.");
 		}
 	}
 	
