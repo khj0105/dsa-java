@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main2 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		Service dsaService = new Service();
+		Service2 dsaService = new Service2();
 		
 		while (true) {
 			dsaService.mainMenu();
