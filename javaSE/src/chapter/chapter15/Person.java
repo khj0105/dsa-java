@@ -2,13 +2,14 @@ package chapter.chapter15;
 
 import java.util.Objects;
 
-//public class Person
-public abstract class Person {// 추상클래스는 하나이상의 추상 메서드가 포함됨, 미완성이기 때문에 객체로 만들수 없음. -> 완성은 상속으로 해결
+//public abstract class Person
+public class Person {// 추상클래스는 하나이상의 추상 메서드가 포함됨, 미완성이기 때문에 객체로 만들수 없음. -> 완성은 상속으로 해결
 	String name; // 이름 필드
 	private int age;	 // 나이 필드
 	
 	// 추상 메서드 (미완성된 메서드)
-	public abstract void update(String name, int age); // 미완성된 메서드 {}가 없음
+//	public  void update(String name, int age);
+//	public abstract void update(String name, int age); // 미완성된 메서드 {}가 없음
 	
 	public Person(String name, int age) {
 		// this(age);
